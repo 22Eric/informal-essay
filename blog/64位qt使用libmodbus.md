@@ -87,6 +87,7 @@ Windows, qt6.2.4,msvc2019 64bit
     8. 再次编译，编译通过。
     
        tips: 在使用modbus_new_tcp 函数过后，不能直接读取或写入，需要先modbus_set_slave。
+             图片请下载docx版本的本文章观看。
     
        
 
