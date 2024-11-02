@@ -62,7 +62,7 @@ Windows, qt6.2.4,msvc2019 64bit
 
     2. 在pro文件目录中，新建文件夹**libmodbus**，将上面提到的/src文件夹下所有.h和.c文件复制到新建立的libmodbus文件夹下。
 
-       ![image-20240924095203978](C:\Users\22594\AppData\Roaming\Typora\typora-user-images\image-20240924095203978.png)
+       ![image-20240924095203978](https://s2.loli.net/2024/11/02/NIo9OtZQlMPD63d.png)
 
     3. 将上面提到的modbus.lib和modbus.dll放入项目构建目录（exe所在目录）中
 
