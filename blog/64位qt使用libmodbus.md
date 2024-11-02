@@ -24,15 +24,15 @@ Windows, qt6.2.4,msvc2019 64bit
 
 6. 将下图中的debug和win32 改为 release 和x64。
 
-   ![image-20240924093213845](C:\Users\22594\AppData\Roaming\Typora\typora-user-images\image-20240924093213845.png)
+   ![image-20240924093213845](https://s2.loli.net/2024/11/02/qbJARjD4pcirKFg.png)
 
 7. 运行程序，发现有一些link2019的报错。 右击项目，打开属性，在配置属性-链接器-输入-附加依赖项中添加`ws2_32.lib`
 
-   ![image-20240924093521908](C:\Users\22594\AppData\Roaming\Typora\typora-user-images\image-20240924093521908.png)
+   ![image-20240924093521908](https://s2.loli.net/2024/11/02/S13ANqLgF2CXjie.png)
 
 8. 再次运行程序，发现错误减少，有link1120错误。项目右键属性-常规-配置类型，修改为（动态库.dll）
 
-   ![image-20240924093932989](C:\Users\22594\AppData\Roaming\Typora\typora-user-images\image-20240924093932989.png)
+   ![image-20240924093932989](https://s2.loli.net/2024/11/02/3DPAKqZfE5aT6rz.png)
 
 9. 再次运行程序。编译成功，没有错误，此时会提示一些编译警告，可以添加预定义消除警告。
 
@@ -52,7 +52,7 @@ Windows, qt6.2.4,msvc2019 64bit
    FREEGLUT_STATIC
    ```
 
-   ![image-20240924094119246](C:\Users\22594\AppData\Roaming\Typora\typora-user-images\image-20240924094119246.png)
+   ![image-20240924094119246](../../../../AppData/Roaming/Typora/typora-user-images/image-20240924094119246.png)
 
 10. 再次运行程序。成功在/src/win32/x64/Release文件夹中生成**modbus.lib** 和**modbus.dll**。至此libmodbus的安装工作结束
 
