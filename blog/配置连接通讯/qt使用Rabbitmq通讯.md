@@ -40,7 +40,7 @@
 
 使用qt creator打开qamqp.pro工程，并编译。找到对应的`qamqp.lib和qamqp.dll`或`qamqp0.lib和qamqp0.dll` 。
 
-详细工程测试样例代码请看<<RabbitmqTest>>
+详细工程测试样例代码请看RabbitmqTest
 
 
 
