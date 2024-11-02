@@ -52,7 +52,7 @@ Windows, qt6.2.4,msvc2019 64bit
    FREEGLUT_STATIC
    ```
 
-   ![image-20240924094119246](../../../../AppData/Roaming/Typora/typora-user-images/image-20240924094119246.png)
+   ![image-20240924094119246](https://s2.loli.net/2024/11/02/djRF8oK4Xhk3xri.png)
 
 10. 再次运行程序。成功在/src/win32/x64/Release文件夹中生成**modbus.lib** 和**modbus.dll**。至此libmodbus的安装工作结束
 
