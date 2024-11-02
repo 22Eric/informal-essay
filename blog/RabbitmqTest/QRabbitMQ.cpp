@@ -1,4 +1,5 @@
 #include "qrabbitmq.h"
+#include <QUuid>
 QRabbitMQ::QRabbitMQ(QObject *parent) : QObject(parent)
 {
     m_exchangerName = "direct_exchanger222";
@@ -20,10 +21,11 @@ void QRabbitMQ::clientConnected()
 }
 void QRabbitMQ::exchangeDeclared()
 {
-    QAmqpQueue *temporaryQueue = m_client.createQueue();
+    QAmqpQueue *temporaryQueue = m_client.createQueue(m_bindingKeyList[0]);
     connect(temporaryQueue, SIGNAL(declared()), this, SLOT(queueDeclared()));
     connect(temporaryQueue, SIGNAL(messageReceived()), this, SLOT(messageReceived()));
-    temporaryQueue->declare(QAmqpQueue::Exclusive);
+
+    temporaryQueue->declare(QAmqpQueue::Durable);
 }
 void QRabbitMQ::queueDeclared()
 {
@@ -35,6 +37,7 @@ void QRabbitMQ::queueDeclared()
     // Bind keys
     foreach(QString severity, m_bindingKeyList)
         temporaryQueue->bind(m_exchangerName, severity);
+
     qDebug() << " [*] Waiting for message.";
 }
 void QRabbitMQ::messageReceived()
@@ -49,8 +52,14 @@ void QRabbitMQ::messageReceived()
 }
 void QRabbitMQ::sendMsg(const QString &msg)
 {
+    // 创建消息属性哈希表
+    QAmqpMessage::PropertyHash properties;
+    properties[QAmqpMessage::DeliveryMode] = 2;  // 2表示消息持久化
+    properties[QAmqpMessage::ContentType] = QString("text/plain");
+    properties[QAmqpMessage::MessageId] = QUuid::createUuid().toString();
+    properties[QAmqpMessage::Timestamp] = QDateTime::currentDateTime();
     QAmqpExchange *exchange = m_client.createExchange(m_exchangerName);
-    exchange->publish(msg, m_routingKey);
+    exchange->publish(msg, m_routingKey, properties);
 }
 void QRabbitMQ::setServerParam(const QString &ip, int port)
 {

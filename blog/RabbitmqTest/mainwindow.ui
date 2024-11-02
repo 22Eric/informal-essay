@@ -69,7 +69,7 @@
             <item>
              <widget class="QLineEdit" name="RoutingKey">
               <property name="text">
-               <string>newExchange</string>
+               <string>queue</string>
               </property>
              </widget>
             </item>
@@ -87,7 +87,7 @@
             <item>
              <widget class="QLineEdit" name="BindingKey">
               <property name="text">
-               <string>newExchange</string>
+               <string>queue</string>
               </property>
              </widget>
             </item>
