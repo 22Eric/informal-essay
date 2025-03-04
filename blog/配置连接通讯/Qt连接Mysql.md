@@ -67,6 +67,18 @@ MainWindow::MainWindow(QWidget *parent) :
 2. 原因：作者使用的qt5.9.0是32位，而Mysql8.0.26是64位，版本兼容问题。
 3. 解决方法：下载32位的MySQL Connector，找到它安装目录下的libmysql.dll文件，将其复制到Qt安装目录下的bin文件夹下即可解决。
 
+问题2:
+
+1. 现象：QMYSQL  driver not loaded （qt6.2.4连接mysql8.0出现的问题）
+
+2. 解决方案：到https://github.com/thecodemonkey86/qt_mysql_driver/releases?page=3找到对应qt版本，对应编译器（msvc/mingw）的文件下载。
+
+3. 把`libmysql.dll、libcrypto-1_1-x64.dll、libssl-1_1-x64.dll`放到`C:\Qt\6.2.4\msvc2019_64\bin`文件夹下。
+
+4. 把`qsqlmysql.dll、qsqlmysqld.dll`放到`C:\Qt\6.2.4\msvc2019_64\plugins\sqldrivers`即可解决
+
+   
+
 问题2：
 
 1. 现象：Authentication plugin 'caching_sha2_password' cannot be loaded
