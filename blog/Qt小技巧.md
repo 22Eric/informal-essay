@@ -19,3 +19,18 @@ QRabbitMQ.obj:-1: error: LNK2019: 无法解析的外部符号 "public: static st
 
 改成static_cast
 
+## 3. mysql小技巧
+
+```mysql
+
+// 在对应的表中增加字段，显示出记录何时创建
+ALTER TABLE your_table_name
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+// 在对应的表中增加字段，显示出记录何时修改
+ALTER TABLE your_table_name
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+```
+
+不需要使用代码进行update时间了，会自动记录。
