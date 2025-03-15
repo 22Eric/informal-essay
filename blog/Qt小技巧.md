@@ -34,3 +34,14 @@ ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIME
 ```
 
 不需要使用代码进行update时间了，会自动记录。
+
+
+
+## 4. qt 默认样式
+
+```
+// 在style
+qwindowsvistastyle.dll
+qwindowsvistastyled.dll
+```
+
