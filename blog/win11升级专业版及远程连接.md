@@ -7,7 +7,7 @@
    ![image-20250702151221856](https://s2.loli.net/2025/07/02/VpA6qxFoNQY7Xgn.png)
 
 3. win+R, 输入powershell， 回车, 再在弹出的窗口内输：
-   `irm massgrave.dev/get.ps1 | iex`
+   `irm https://get.activated.win | iex`
 
 4. 弹出窗口选[1]
 
