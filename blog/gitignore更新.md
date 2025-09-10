@@ -137,4 +137,95 @@ git push
    
    ```
 
+   3. 适用于qt C++ windows的.gitignore
    
+      ```
+      # Qt / C++ (Windows) 常用 .gitignore
+      
+      
+      # --- VS Code / 其它 IDE ---
+      .vscode/
+      .idea/
+      *.code-workspace
+      .qtc_clangd/
+      
+      
+      # --- 构建产物 ---
+      /build/
+      /build-*/
+      cmake-build-*/
+      out/
+      CMakeFiles/
+      CMakeCache.txt
+      cmake_install.cmake
+      Makefile
+      install_manifest.txt
+      
+      # --- qmake / Qt Creator ---
+      *.pro.user
+      *.pro.user.*
+      *.qmake.stash
+      *.qmake.cache
+      *.creator.user
+      *.creator.user.*
+      
+      # --- Visual Studio / MSVC ---
+      *.sln
+      *.vcxproj*
+      *.vcproj*
+      *.vcxproj.user
+      *.user
+      *.suo
+      *.sdf
+      *.VC.db
+      *.opendb
+      
+      # --- VS Code / 其它 IDE ---
+      .vscode/
+      .idea/
+      *.code-workspace
+      
+      # --- 自动生成的 Qt 文件 ---
+      moc_*.cpp
+      qrc_*.cpp
+      ui_*.h
+      *.moc
+      *.moc.h
+      *.ui.user
+      
+      # --- 编译产物 ---
+      *.obj
+      *.o
+      *.a
+      *.lib
+      *.dll
+      *.exp
+      *.exe
+      *.pdb
+      *.ilk
+      *.idb
+      
+      # --- 临时 / 日志 / 备份 ---
+      *.log
+      *.log.*
+      *.tmp
+      *.tmp.*
+      *.swp
+      *~ 
+      *.bak
+      *.orig
+      *.rej
+      *.txt
+      
+      # --- 系统文件 ---
+      Thumbs.db
+      desktop.ini
+      .DS_Store
+      
+      # --- 可选：打包 / 发布产物 ---
+      /dist/
+      /release/
+      /bin/
+      ```
+      
+      
